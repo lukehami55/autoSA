@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 "/Users/duyn/Documents/SA/localPopup.py" > /dev/null 2>&1 &
+python3 "/Users/duyn/Documents/autoSA/localPopup.py" > /dev/null 2>&1 &
