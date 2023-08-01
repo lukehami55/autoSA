@@ -14,15 +14,15 @@ def autosa(params, index, desc_label):
     read data.csv and potential index.csv (create index if NA)
     """
     try:
-        dataDf = pd.read_csv("C:/Users/LukeHamilton/SA/data.csv")
+        dataDf = pd.read_csv("/Users/<YourUsername>/Documents/SA/data.csv")
     except:
-        desc_label.config(text="No data.csv file found in directory C:/Users/LukeHamilton/SA")
+        desc_label.config(text="No data.csv file found in directory /Users/<YourUsername>/Documents/SA/data.csv")
 
     if index:
         try:
-            indexDf = pd.read_csv("C:/Users/LukeHamilton/SA/index.csv")
+            indexDf = pd.read_csv("/Users/<YourUsername>/Documents/SA/data.csv")
         except:
-            desc_label.config(text="No index.csv file found in directory C:/Users/LukeHamilton/SA")
+            desc_label.config(text="No index.csv file found in directory /Users/<YourUsername>/Documents/SA/data.csv")
         indexDf = indexDf.drop_duplicates(subset=['Campaigns'])
     else:
         indexDf = createIndex(dataDf, params)
@@ -103,7 +103,7 @@ def autosa(params, index, desc_label):
     dataTable[[spend, sales, 'Impressions', 'Clicks', 'Orders']] = dataTable[[spend, sales, 'Impressions', 'Clicks', 'Orders']].astype(int)
     dataTable = dataTable.applymap(lambda x: "{:,}".format(x))
     dataTable[['CTR', 'CVR']] = dataTable[['CTR', 'CVR']] + '%'
-    dataTable.to_csv("C:/Users/LukeHamilton/SA/autosa.csv", encoding='Windows-1252')
+    dataTable.to_csv("/Users/<YourUsername>/Documents/SA/data.csv", encoding='Windows-1252')
 
     if index:
         desc_label.config(text="Ran Auto SA with index")
