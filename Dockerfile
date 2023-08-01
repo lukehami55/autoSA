@@ -20,4 +20,4 @@ COPY calckpi.py /app/calckpi.py
 ENV DISPLAY=:99
 
 # Start xvfb and run the Tkinter application
-CMD xvfb-run -s "-screen 0 1920x1080x24" python localPopup.py
+CMD ["xvfb-run", "-s", "-screen 0 1920x1080x24", "python", "localPopup.py"]
